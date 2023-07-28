@@ -1,0 +1,48 @@
+.van-theme-dark body {
+  color: #f5f5f5;
+  background-color: #131313;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  color: var(--van-gray-8);
+  background-color: #fcfcfe;
+  transition: all 0.3s ease-in-out;
+}
+
+a {
+  color: var(--van-blue);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  &:visited {
+    color: var(--van-blue);
+  }
+}
+
+.page {
+
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.1s;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    filter: blur(.5rem);
+  }
+}
+
+.layout {
+
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.1s;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    filter: grayscale(1);
+  }
+}

@@ -1,63 +1,61 @@
-# Nuxt 3 Minimal Starter
+# Nuxt3 ChatGPT
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 1. 项目介绍
 
-## Setup
+## 2. 环境要求
 
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+需要安装 `pnpm` 8+，且要求 Node.js >= 16，安装方法：
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
+npm i -g pnpm
 ```
 
-## Production
-
-Build the application for production:
+或者在启用 `corepack` 时使用 `corepack` 安装最新版本：
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
+corepack prepare pnpm@latest --activate
 ```
 
-Locally preview production build:
+安装依赖：
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
+pnpm i
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+升级全部依赖项目：
+
+```bash
+pnpm up
+```
+
+删除不需要的依赖：
+
+```bash
+pnpm store prune
+```
+
+## 3. 开发和部署
+
+开发：
+
+```bash
+pnpm dev
+```
+
+构建：
+
+```bash
+pnpm build
+```
+
+静态构建：
+
+```bash
+pnpm generate
+```
+
+Docker Compose 部署：
+
+```bash
+docker-compose up -d
+```

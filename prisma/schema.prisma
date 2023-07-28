@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Answer {
+  id         Int       @id @default(autoincrement())
+  field      String?   @db.VarChar(64)
+  keyword    String    @db.VarChar(255)
+  answer     String    @db.VarChar(2046)
+  is_deleted Int?      @default(0) @db.TinyInt
+  created_at DateTime? @default(now()) @db.DateTime(0)
+  updated_at DateTime? @default(now()) @db.DateTime(0)
+
+  @@map("m_answer")
+}
+
+model Dialog {
+  id         Int       @id @default(autoincrement())
+  user_id    Int
+  name       String?   @db.VarChar(64)
+  is_deleted Int?      @default(0) @db.TinyInt
+  created_at DateTime? @default(now()) @db.DateTime(0)
+  updated_at DateTime? @default(now()) @db.DateTime(0)
+
+  @@index([user_id], map: "user_id")
+  @@map("m_dialog")
+}
+
+model Message {
+  id         Int       @id @default(autoincrement())
+  dialog_id  Int
+  user_id    Int
+  answer_id  Int?
+  question   String?   @db.VarChar(2046)
+  answer     String?   @db.VarChar(2046)
+  is_deleted Int?      @default(0) @db.TinyInt
+  created_at DateTime? @default(now()) @db.DateTime(0)
+  updated_at DateTime? @default(now()) @db.DateTime(0)
+
+  @@index([answer_id], map: "answer_id")
+  @@index([dialog_id], map: "dialog_id")
+  @@index([user_id], map: "user_id")
+  @@map("m_message")
+}
+
+model User {
+  id         Int       @id @default(autoincrement())
+  username   String    @unique(map: "username") @db.VarChar(64)
+  password   String    @db.VarChar(64)
+  nickname   String?   @db.VarChar(64)
+  email      String?   @db.VarChar(255)
+  phone      String?   @db.VarChar(64)
+  gender     Int?      @default(0) @db.TinyInt
+  role       String?   @default("admin") @db.VarChar(100)
+  is_deleted Int?      @default(0) @db.TinyInt
+  created_at DateTime? @default(now()) @db.DateTime(0)
+  updated_at DateTime? @default(now()) @db.DateTime(0)
+
+  @@map("m_user")
+}
