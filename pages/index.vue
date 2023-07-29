@@ -90,11 +90,15 @@ onMounted(async () => {
 <template>
   <div class="relative box-border h-full p-2">
     <van-skeleton v-show="!isInitial" avatar :row="8" />
-    <div v-show="isInitial" ref="contentElemRef" class="h-[calc(100vh-6rem-var(--van-nav-bar-height))] overflow-auto">
+    <div
+      v-show="isInitial" ref="contentElemRef"
+      class="h-[calc(100vh-6rem-var(--van-nav-bar-height))] overflow-auto sm:h-[calc(100vh-6rem)]">
       <van-pull-refresh v-model="isLoading" class="min-h-full" :success-text="$t('flush_success')" @refresh="onRefresh">
-        <div class="min-h-[calc(100vh-6rem-var(--van-nav-bar-height))]">
+        <div class="min-h-[calc(100vh-6rem-var(--van-nav-bar-height))] sm:min-h-[calc(100vh-6rem)]">
           <dialog-card left-content="Hi, I'm Smart Cat. You can ask anything about Chinese culture!" />
           <dialog-card v-for="msg in messages" :key="msg.id" :right-content="msg.question" :left-content="msg.answer" />
+          <!-- safe area -->
+          <div class="h-8"><br></div>
         </div>
       </van-pull-refresh>
     </div>
