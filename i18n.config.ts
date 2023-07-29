@@ -14,6 +14,8 @@ export default defineI18nConfig(() => ({
       please_input_something: 'Please input something!',
       ask_question: 'Ask some Question?',
       flush_success: 'Flush Success!',
+      fetch_failed: 'Fetch Failed!',
+      loading: 'Loading...',
     },
     zh_CN: {
       app_name: '聊天猫',
@@ -27,6 +29,8 @@ export default defineI18nConfig(() => ({
       please_input_something: '请输入内容！',
       ask_question: '问点什么吧？',
       flush_success: '刷新成功！',
+      fetch_failed: '获取失败！',
+      loading: '加载中...',
     },
     ja_JP: {
       app_name: 'チャット猫',
@@ -40,6 +44,8 @@ export default defineI18nConfig(() => ({
       please_input_something: '何かを入力してください！',
       ask_question: '何か質問しますか？',
       flush_success: '更新に成功しました！',
+      fetch_failed: '取得に失敗しました！',
+      loading: 'ロード中...',
     },
   },
 }))

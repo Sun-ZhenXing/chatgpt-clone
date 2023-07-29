@@ -59,3 +59,11 @@ Docker Compose 部署：
 ```bash
 docker-compose up -d
 ```
+
+重新部署：
+
+```bash
+docker-compose down
+docker builder prune -a -f
+docker-compose up -d
+```

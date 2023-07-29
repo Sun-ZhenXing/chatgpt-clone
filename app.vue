@@ -12,12 +12,12 @@ const themeVars = useThemeVars()
     <nuxt-layout>
       <van-nav-bar :title="$t('app_name')" class="sm:hidden">
         <template #left>
-          <div class="h-screen w-8 flex items-center" @click="showLeftSide = !showLeftSide">
+          <div class="w-8 flex items-center" @click="showLeftSide = !showLeftSide">
             <Icon name="ic:baseline-notes" size="18" />
           </div>
         </template>
         <template #right>
-          <div class="h-screen w-8 flex items-center" @click="$toggleColorMode">
+          <div class="w-8 flex items-center" @click="$toggleColorMode">
             <ClientOnly>
               <Icon :name="$darkThemeIconName" size="18" />
             </ClientOnly>
