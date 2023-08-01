@@ -21,17 +21,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="h-screen w-full w-full flex flex-col items-center justify-center">
-    <van-empty image="error" description="内容走丢了，呜呜呜~" />
-    <div v-if="isDev" class="w-full break-words">
-      <van-icon name="fail" color="red" size="64" />
+  <div class="m-[0_auto] h-screen max-w-[620px] w-full flex flex-col items-center justify-center">
+    <van-empty image="error" :description="$t('content_has_gone')" />
+    <div v-if="isDev" class="break-words">
+      <van-icon name="fail" color="red" size="32" />
       <span>{{ processingError.message }}</span>
       <!-- eslint-disable-next-line vue/html-self-closing -->
-      <div class="box-border w-full overflow-auto p-4" v-html="processingError.stack"></div>
+      <div class="box-border overflow-auto p-4" v-html="processingError.stack"></div>
     </div>
-    <div class="m2">
-      <van-button style="margin: .5rem;" type="success" @click="refreshPage">刷新试试</van-button>
-      <van-button style="margin: .5rem;" type="primary" @click="handleError">回到主页</van-button>
-    </div>
+    <van-space>
+      <van-button class="m-2" type="success" @click="refreshPage">{{ $t('try_refresh') }}</van-button>
+      <van-button class="m-2" type="primary" @click="handleError">{{ $t('go_home') }}</van-button>
+    </van-space>
   </div>
 </template>

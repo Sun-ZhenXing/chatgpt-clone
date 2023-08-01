@@ -2,6 +2,25 @@
 
 ## 1. 项目介绍
 
+本项目是一个基于 Nuxt3 的聊天机器人示例。
+
+**TODO**:
+
+- [ ] 完善模型，完善接口内容
+- [ ] 提供登录、注册、修改密码等功能
+- [ ] 优化组件结构，加快页面加载速度
+- [ ] 优化 UI，优化代码结构和注释
+- [ ] 完善文档，提供英文 README
+
+快速体验：
+
+```bash
+git clone https://github.com/Sun-ZhenXing/chatgpt-clone.git
+docker-compose up -d
+```
+
+打开 <http://localhost:3000> 即可体验。
+
 ## 2. 环境要求
 
 需要安装 `pnpm` 8+，且要求 Node.js >= 16，安装方法：

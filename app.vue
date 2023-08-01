@@ -46,8 +46,8 @@ const themeVars = useThemeVars()
     <!-- app setting -->
     <app-settings />
     <!-- history -->
-    <van-dialog v-model:show="showHistory" title="历史记录" show-cancel-button>
-      <van-empty description="暂时没有历史~" />
+    <van-dialog v-model:show="showHistory" :title="$t('history_record')" show-cancel-button>
+      <van-empty :description="$t('no_history_record')" />
     </van-dialog>
   </van-config-provider>
 </template>
