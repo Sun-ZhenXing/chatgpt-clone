@@ -9,7 +9,7 @@ services:
     volumes:
       - ./docs/tables.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - "3316:3306"
+      - '3316:3306'
   nuxt:
     build:
       context: .
@@ -18,6 +18,6 @@ services:
     environment:
       DATABASE_URL: mysql://root:password@mysql:3306/chatgpt_clone
     ports:
-      - "3010:3000"
+      - '3010:3000'
     depends_on:
       - mysql

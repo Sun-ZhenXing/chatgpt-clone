@@ -9,8 +9,8 @@ export const useShowSetting = () => useState<boolean>('openSetting', () => false
 export const useShowHistory = () => useState<boolean>('showHistory', () => false)
 
 /**
-* 应用的一级路由导航
-*/
+ * 应用的一级路由导航
+ */
 export const useTopLevelTabbar = () => useState<0 | 1 | 2 | 3>('topLevelTabbar', () => 0)
 
 /**

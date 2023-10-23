@@ -7,13 +7,11 @@ export const useAppStore = defineStore({
       isDarkTheme: false,
       isUsingSystemDarkMode: true,
 
-      // 当前对话 ID
+      // current dialog id
       currDialogId: 1,
     }
   },
   actions: {
   },
-  persist: {
-    storage: persistedState.localStorage,
-  },
+  persist: true,
 })

@@ -31,20 +31,21 @@ function changeLanguage() {
 </script>
 
 <template>
-  <van-dialog
-    :show="showSetting" :title="$t('language')" show-confirm-button show-cancel-button
-    @cancel="showSetting = false" @confirm="changeLanguage">
-    <van-search v-model="value" :placeholder="$t('language')" />
-    <van-list>
-      <van-cell class="cursor-pointer" :class="active === 0 ? 'text-active!' : ''" title="中文" @click="active = 0">
+  <VanDialog
+    :show="showSetting" :title="$t('language')" show-cancel-button show-confirm-button
+    @cancel="showSetting = false" @confirm="changeLanguage"
+  >
+    <VanSearch v-model="value" :placeholder="$t('language')" />
+    <VanList>
+      <VanCell class="cursor-pointer" :class="active === 0 ? 'text-active!' : ''" title="中文" @click="active = 0">
         zh-CN
-      </van-cell>
-      <van-cell class="cursor-pointer" :class="active === 1 ? 'text-active!' : ''" title="English" @click="active = 1">
+      </VanCell>
+      <VanCell class="cursor-pointer" :class="active === 1 ? 'text-active!' : ''" title="English" @click="active = 1">
         en-US
-      </van-cell>
-      <van-cell class="cursor-pointer" :class="active === 2 ? 'text-active!' : ''" title="日本語" @click="active = 2">
+      </VanCell>
+      <VanCell class="cursor-pointer" :class="active === 2 ? 'text-active!' : ''" title="日本語" @click="active = 2">
         ja-JP
-      </van-cell>
-    </van-list>
-  </van-dialog>
+      </VanCell>
+    </VanList>
+  </VanDialog>
 </template>

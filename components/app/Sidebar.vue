@@ -51,41 +51,44 @@ function menuItemClass(i: number) {
         <Icon name="simple-icons:openai" class="text-sky-500" size="48" />
       </div>
     </div>
-    <van-divider :hairline="false" />
+    <VanDivider :hairline="false" />
     <div
       v-for="item, i in menus" :key="i" class="m-2 flex cursor-pointer items-center justify-center rounded-full"
-      :class="menuItemClass(i)" @click="active = i">
+      :class="menuItemClass(i)" @click="active = i"
+    >
       <span
         v-show="active === i"
         :class="isMobileOrTablet ? '' : 'hover:bg-transparent lg:hover:bg-transparent sm:hover:bg-sky-500/[.1]'"
-        class="rounded-full p-2">
+        class="rounded-full p-2"
+      >
         <Icon :name="item.activeIcon" size="24" />
       </span>
       <span
         v-show="active !== i"
         :class="isMobileOrTablet ? '' : 'hover:bg-transparent lg:hover:bg-transparent sm:hover:bg-sky-500/[.1]'"
-        class="rounded-full p-2">
+        class="rounded-full p-2"
+      >
         <Icon :name="item.icon" size="24" />
       </span>
       <span class="block p-2 text-4 lg:block sm:hidden">{{ $t(item.name) }}</span>
     </div>
-    <van-divider :hairline="false" />
+    <VanDivider :hairline="false" />
     <div class="m-2 hidden w-8 w-full items-center justify-center sm:flex" @click="$toggleColorMode">
       <ClientOnly>
-        <van-button round plain type="primary">
+        <VanButton round plain type="primary">
           <Icon :name="$darkThemeIconName" size="16" /> <span class="text-4">{{ $t('theme') }}</span>
-        </van-button>
+        </VanButton>
       </ClientOnly>
     </div>
     <div class="m-2 w-8 w-full flex items-center justify-center">
-      <van-button round plain type="primary" @click="showSetting = true">
+      <VanButton round plain type="primary" @click="showSetting = true">
         <Icon name="fluent:local-language-zi-24-filled" size="16" /> <span class="text-4">{{ $t('language') }}</span>
-      </van-button>
+      </VanButton>
     </div>
     <div class="m-2 w-8 w-full flex items-center justify-center md:hidden">
-      <van-button round plain type="primary" @click="showHistory = true">
+      <VanButton round plain type="primary" @click="showHistory = true">
         <Icon name="fluent:history-24-filled" size="16" /> <span class="text-4">{{ $t('history') }}</span>
-      </van-button>
+      </VanButton>
     </div>
   </div>
 </template>

@@ -38,11 +38,13 @@ export default defineNuxtPlugin((_) => {
         if (isUsingSystemDarkMode.value) {
           isDarkTheme.value = false
           isUsingSystemDarkMode.value = false
-        } else {
+        }
+        else {
           if (isDarkTheme.value) {
             isDarkTheme.value = false
             isUsingSystemDarkMode.value = true
-          } else {
+          }
+          else {
             isDarkTheme.value = true
           }
         }

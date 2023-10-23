@@ -89,31 +89,36 @@ onMounted(async () => {
 
 <template>
   <div class="relative box-border h-full p-2">
-    <van-skeleton v-show="!isInitial" avatar :row="8" />
+    <VanSkeleton v-show="!isInitial" avatar :row="8" />
     <div
       v-show="isInitial" ref="contentElemRef"
-      class="h-[calc(100vh-6rem-var(--van-nav-bar-height))] overflow-auto sm:h-[calc(100vh-6rem)]">
-      <van-pull-refresh v-model="isLoading" class="min-h-full" :success-text="$t('flush_success')" @refresh="onRefresh">
+      class="h-[calc(100vh-6rem-var(--van-nav-bar-height))] overflow-auto sm:h-[calc(100vh-6rem)]"
+    >
+      <VanPullRefresh v-model="isLoading" class="min-h-full" :success-text="$t('flush_success')" @refresh="onRefresh">
         <div class="min-h-[calc(100vh-6rem-var(--van-nav-bar-height))] sm:min-h-[calc(100vh-6rem)]">
-          <dialog-card left-content="Hi, I'm Smart Cat. You can ask anything about Chinese culture!" />
-          <dialog-card v-for="msg in messages" :key="msg.id" :right-content="msg.question" :left-content="msg.answer" />
+          <DialogCard left-content="Hi, I'm Smart Cat. You can ask anything about Chinese culture!" />
+          <DialogCard v-for="msg in messages" :key="msg.id" :right-content="msg.question" :left-content="msg.answer" />
           <!-- safe area -->
-          <div class="h-8"><br></div>
+          <div class="h-8">
+            <br>
+          </div>
         </div>
-      </van-pull-refresh>
+      </VanPullRefresh>
     </div>
 
     <!-- input box at buttom -->
     <div class="absolute bottom-0 left-0 right-0 z-100 ml-auto mr-auto box-border h-20 w-full overflow-hidden pl-2 pr-2">
-      <van-field
+      <VanField
         v-model="userInputText" class="rounded-full pt-[2px] drop-shadow-xl" rows="1"
-        :placeholder="$t('ask_question')" autocomplete="off" @keypress.enter="sendMsg" @click-right-icon="sendMsg">
+        :placeholder="$t('ask_question')" autocomplete="off" @keypress.enter="sendMsg" @click-right-icon="sendMsg"
+      >
         <template #right-icon>
           <Icon
             name="fluent:send-20-filled" size="24" class="rounded-full bg-sky-1/[0.5] p-2 text-sky-500"
-            :class="isMobileOrTablet ? 'mobile-feedback' : 'desktop-feedback'" />
+            :class="isMobileOrTablet ? 'mobile-feedback' : 'desktop-feedback'"
+          />
         </template>
-      </van-field>
+      </VanField>
     </div>
   </div>
 </template>

@@ -1,4 +1,2 @@
-import { getUserByUsername } from '../../services/users'
-
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (_event) => {
 })

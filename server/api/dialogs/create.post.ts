@@ -2,7 +2,7 @@ import { createDialog } from '../../services/dialogs'
 
 // import { getServerSession } from '#auth'
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (_event) => {
   // const session = await getServerSession(event)
   // if (!session || !session.user) {
   //   throw createError({
